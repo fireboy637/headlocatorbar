@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "headlocatorbar",
+  "version": "${version}",
+  "name": "Head locator bar",
+  "description": "Locator bar displays heads",
+  "authors": [
+    "Cortex"
+  ],
+  "contact": {
+  },
+  "license": "ARR",
+  "environment": "client",
+  "entrypoints": {
+  },
+  "mixins": [
+    "headlocatorbar.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "java": ">=21"
+  }
+}
