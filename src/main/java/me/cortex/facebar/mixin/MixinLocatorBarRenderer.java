@@ -1,14 +1,12 @@
-package me.cortex.headlocatorbar.mixin;
+package me.cortex.facebar.mixin;
 
 import com.mojang.blaze3d.pipeline.RenderPipeline;
-import me.cortex.headlocatorbar.Headlocatorbar;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.contextualbar.LocatorBarRenderer;
 import net.minecraft.client.resources.WaypointStyle;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.waypoints.TrackedWaypoint;
 import net.minecraft.world.waypoints.Waypoint;
@@ -48,11 +46,12 @@ public class MixinLocatorBarRenderer {
             Waypoint.Icon icon = this.waypoint.icon();
             WaypointStyle style = this.minecraft.getWaypointStyles().get(icon.style);
             float progress = 1-Mth.clamp((distance-style.nearDistance())/(style.farDistance()-style.nearDistance()),0,1);
-            k = Mth.lerpInt(progress, 4*100, (k+1)*100);
-            l = Mth.lerpInt(progress, 4*100, (l+1)*100);
+            k = Mth.lerpInt(progress, 4*100, (k)*100);
+            l = Mth.lerpInt(progress, 4*100, (l)*100);
             instance.pose().pushMatrix();
             instance.pose().scale(0.01f);
             instance.blit(this.blitOverride, (i*100+450)-(k/2), (j*100+450)-(l/2), (i*100+450)-(k/2)+k, (j*100+450)-(l/2)+l, 1f/8,2f/8,1f/8,2f/8);
+            instance.blit(this.blitOverride, (i*100+450)-(k/2), (j*100+450)-(l/2), (i*100+450)-(k/2)+k, (j*100+450)-(l/2)+l, 4f/8,5f/8,1f/8,2f/8);
             instance.pose().popMatrix();
         }
         this.blitOverride = null;

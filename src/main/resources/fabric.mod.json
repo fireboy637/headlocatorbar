@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "headlocatorbar",
+  "id": "facebar",
   "version": "${version}",
-  "name": "Head locator bar",
+  "name": "Face bar",
   "description": "Locator bar displays heads",
   "authors": [
     "Cortex"
@@ -14,7 +14,7 @@
   "entrypoints": {
   },
   "mixins": [
-    "headlocatorbar.mixins.json"
+    "facebar.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.16.14",
