@@ -50,6 +50,7 @@ public class MixinLocatorBarRenderer {
             l = Mth.lerpInt(progress, 4*100+100, (l)*100);
             instance.pose().pushMatrix();
             instance.pose().scale(0.01f);
+            //TODO: maybe use `PlayerFaceRenderer.draw`
             instance.blit(this.blitOverride, (i*100+450)-(k/2), (j*100+450)-(l/2), (i*100+450)-(k/2)+k, (j*100+450)-(l/2)+l, 1f/8,2f/8,1f/8,2f/8);
             instance.blit(this.blitOverride, (i*100+450)-(k/2), (j*100+450)-(l/2), (i*100+450)-(k/2)+k, (j*100+450)-(l/2)+l, 5f/8,6f/8,1f/8,2f/8);
             instance.pose().popMatrix();
